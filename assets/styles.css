@@ -1,0 +1,282 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: starjedi;
+  src: url('fonts/starjedi.ttf');
+  font-display: swap;
+}
+
+:root {
+  --black-color: #000;;
+  --white-color: #eee;
+  --star-wars-yellow: #FFE918;
+
+  --header-height: 100px;
+}
+
+html {
+  background-color: black;
+}
+
+body {
+  font-family: starjedi;
+}
+
+/* Header */
+.header {
+  background-color: var(--black-color);
+  box-sizing: border-box;
+  height: var(--header-height);
+  padding: 10px 0;
+}
+
+.header__picture {
+  display: block;
+  height: 100%;
+  text-align: center;
+}
+
+.header__image {
+  height: 100%;
+}
+
+/* Section */
+.section {
+  background-image: radial-gradient(transparent, black), url('img/landing-page/landing-background.jpg');
+  background-position: center;
+  background-size: cover;
+  min-height: calc(100vh - var(--header-height));
+}
+
+.section__title {
+  color: var(--white-color);
+  font-size: 60px;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.section__container {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 0;
+}
+
+/* Cards */
+.section__card {
+  align-items: center;
+  background-size: cover;
+  background-color: var(--black-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: var(--white-color);
+  display: flex;
+  height: 300px;
+  justify-content: center;
+  font-size: 25px;
+  text-decoration: none;
+  transition: all .4s;
+  width: 400px;
+}
+
+.section__card:hover {
+  font-size: 20px;
+  padding-right: 140px;
+}
+
+.player:hover {
+  background-image: url('img/landing-page/landing-vs.jpg');
+}
+
+.computer:hover {
+  background-image: url('img/landing-page/landing-obi.jpg');
+}
+
+.footer__text {
+  color: var(--white-color);
+  font-size: 30px;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* Obi One Section */
+.obiWan__select {
+  background-image: radial-gradient(transparent, black), url('img/vs-computer/clone-background.jpg');
+  display: none;
+}
+
+.obiWan__select.active {
+  display: block;
+}
+
+.card__container {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  height: calc(100vh - 316px);
+}
+
+.card__label {
+  border: 10px solid gray;
+  border-radius: 10px;
+  background-color: gray;
+  cursor: pointer;
+  filter: brightness(.9);
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+  width: 400px
+}
+
+.card__label:hover {
+  border-color: lightgray;
+  background-color: lightgray;
+  filter: brightness(1.2);
+}
+
+.card__label img {
+  border-radius: 10px;
+  min-height: 100%;
+  max-width: 100%;
+}
+
+.card__label:hover .card__title {
+  display: block;
+}
+
+.card__title {
+  bottom: 10px;
+  color: lightgray;
+  display: none;
+  font-size: 30px;
+  letter-spacing: 1px;
+  position: absolute;
+  right: 10px;
+}
+
+input {
+  display: none;
+}
+
+.obiWan__match {
+  background-image: radial-gradient(transparent, black), url('img/vs-computer/obi-background.jpeg');
+  background-position: top;
+  display: none;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.obiWan__match.active {
+  display: grid;
+}
+
+.result,
+.weapon-selection {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: var(--header-height);
+}
+
+.result h2 {
+  color: var(--star-wars-yellow);
+  font-size: 40px;
+}
+
+.result picture {
+  display: block;
+  margin: 60px 0 40px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.result picture img{
+  max-height: 500px;
+  max-width: 100%;
+}
+
+.weapon-selection h3 {
+  color: var(--white-color);
+  font-size: 25px;
+}
+
+.weapon-selection picture {
+  background-color: var(--white-color);
+  border-radius: 100%;
+  padding: 10px;
+  margin: 20px 0;
+  width: 100px;
+}
+
+.weapon-selection picture img {
+  width: 100%;
+}
+
+
+
+@media screen and (max-width: 800px) {
+  .section__title {
+    font-size: 35px;
+  }
+
+  .section__card {
+    width: 300px;
+  }
+
+  .player {
+    background-image: url('img/landing-page/landing-vs.jpg');
+    background-position: center;
+  }
+
+  .computer {
+    background-image: url('img/landing-page/landing-obi.jpg');
+    background-position: center;
+  }
+
+  .card__container {
+    box-sizing: border-box;
+    flex-direction: column;
+    height: auto;
+    padding: 0 50px;
+  }
+
+  .card__label {
+    height: 200px;
+    margin: 20px 0;
+    width: 100%;
+  }
+
+  .obiWan__match {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .result {
+    grid-column: 1/3;
+    grid-row: 1/2;
+    padding-bottom: 20px;
+  }
+
+  .result picture {
+    margin: 0;
+  }
+
+  .weapon-selection h3 {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+
+  .section__container {
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .section__card {
+    margin: 20px 0;
+  }
+}

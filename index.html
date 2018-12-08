@@ -1,0 +1,52 @@
+<!Doctype html>
+<html>
+  <head>
+    <link rel="icon" type="image/png" href="icons/icon-72x72.png">
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars</title>
+  </head>
+  <body>
+    <section>
+      <button class="subscribe-button">Suscribirse :)</button>
+    </section>
+    <header class="header">
+      <picture class="header__picture">
+        <img class="header__image" src="assets/img/starwars-logo.jpg" alt="Star Wars logo">
+      </picture>
+    </header>
+
+
+    <section class="section">
+      <h1 class="section__title">Choose your path</h1>
+      <div class="section__container">
+        <a class="section__card player">Jedi vs Sith</a>
+        <a class="section__card computer" href="views/computer.html">Challenge obi-one</a>
+      </div>
+      <footer>
+        <h3 class="footer__text">Republic Edition</h3>
+      </footer>
+    </section>
+
+    <audio class="lightsaber-audio" src="assets/sounds/lightsaber.wav"></audio>
+    <audio class="hello-audio" src="assets/sounds/hello-there.ogg"></audio>
+
+    <script src="assets/main.js"></script>
+    <script>
+    // Service Worker Register
+    if('serviceWorker' in navigator && 'PushManager' in window) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js')
+          .then((swReg) => {
+            console.log("Service Worker Registered and Push Notifications");
+            swRegistration = swReg;
+            getSubsciptionStatus();
+          })
+      });
+    }
+    </script>
+    <script src="push-notifications.js" async></script>
+  </body>
+</html>

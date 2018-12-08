@@ -1,0 +1,69 @@
+<!Doctype html>
+<html>
+  <head>
+    <link rel="icon" type="image/png" href="icons/icon-72x72.png">
+    <link rel="stylesheet" href="../assets/styles.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars</title>
+  </head>
+  <body>
+    <header class="header">
+      <a href="../index.html">
+        <picture class="header__picture">
+          <img class="header__image" src="../assets/img/starwars-logo.jpg" alt="Star Wars logo">
+        </picture>
+      </a>
+    </header>
+
+    <section class="obiWan__select section active">
+      <h1 class="section__title">Select your weapon</h1>
+      <form action="" class="card__container active">
+        <label class="card__label card__clone" for="clones">
+          <img src="../assets/img/vs-computer/clone.jpg" alt="">
+          <h2 class="card__title">Clones</h2>
+        </label>
+        <label class="card__label card__lightsaber" for="lightsaber">
+          <img src="../assets/img/vs-computer/lightsaber.jpg" alt="">
+          <h2 class="card__title">Lightsaber</h2>
+        </label>
+        <label class="card__label card__force" for="force">
+          <img src="../assets/img/vs-computer/force.jpg" alt="">
+          <h2 class="card__title">Force</h2>
+        </label>
+        <input id="clones" type="radio" name="jugador" value="clones" onclick="vsComputer(this.form)">
+        <input id="lightsaber" type="radio" name="jugador" value="lightsaber" onclick="vsComputer(this.form)">
+        <input id="force" type="radio" name="jugador" value="force" onclick="vsComputer(this.form)">
+      </form>
+    </section>
+
+    <section class="obiWan__match section">
+      <article class="weapon-selection player-selection">
+        <h3>Player 1</h3>
+        <picture>
+          <img class="player1-icon" src="../assets/img/vs-computer/clones-icon.png" alt="">
+        </picture>
+        <h3 class="player1-weapon">Clone Trooper</h3>
+      </article>
+      <article class="result">
+        <picture>
+          <img class="result-image" src="../assets/img/vs-computer/clone.jpg" alt="">
+        </picture>
+        <h2 class="winner-text">Player win</h2>
+      </article>
+      <article class="weapon-selection obiWan-selection">
+        <h3>obi-one kenobi</h3>
+        <picture>
+          <img class="obiWan-icon" src="../assets/img/vs-computer/force-icon.png" alt="">
+        </picture>
+        <h3 class="obiWan-weapon">The force</h3>
+      </article>
+    </section>
+
+    <audio class="clone-sound" src="../assets/sounds/clone.ogx"></audio>
+    <audio class="lightsaber-audio" src="../assets/sounds/lightsaber.wav"></audio>
+    <audio class="force-audio" src="../assets/sounds/force.wav"></audio>
+
+    <script src="../assets/vsComputer.js"></script>
+  </body>
+</html>
