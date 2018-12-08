@@ -9,7 +9,7 @@
     <title>Star Wars</title>
   </head>
   <body>
-    <section>
+    <section class="subscription">
       <button class="subscribe-button">Suscribirse :)</button>
     </section>
     <header class="header">
@@ -34,19 +34,7 @@
     <audio class="hello-audio" src="assets/sounds/hello-there.ogg"></audio>
 
     <script src="assets/main.js"></script>
-    <script>
-    // Service Worker Register
-    if('serviceWorker' in navigator && 'PushManager' in window) {
-      window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/sw.js')
-          .then((swReg) => {
-            console.log("Service Worker Registered and Push Notifications");
-            swRegistration = swReg;
-            getSubsciptionStatus();
-          })
-      });
-    }
-    </script>
+    <script src="sw-registration.js"></script>
     <script src="push-notifications.js" async></script>
   </body>
 </html>
